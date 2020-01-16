@@ -1,0 +1,4 @@
+#dont push these folders
+/bin
+/include
+/lib
