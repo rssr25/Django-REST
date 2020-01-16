@@ -4,6 +4,9 @@ from django.views.generic import View
 import json
 
 from cfeapi.mixins import JsonResponseMixin
+from .models import Update
+
+from django.core.serializers import serialize
 
 
 # Create your views here.
@@ -55,3 +58,23 @@ class JsonCBV2(JsonResponseMixin, View):
 		return self.render_to_json_response(data)
 
 
+class SerializedDetailView(JsonResponseMixin, View):
+
+	def get(self, request, *args, **kwargs):
+		obj = Update.objects.get(id=1)
+		data = serialize("json", [obj,], fields=('user', 'content'))
+
+		return HttpResponse(data, content_type='application/json')
+
+
+class SerializedListView(JsonResponseMixin, View):
+
+	def get(self, request, *args, **kwargs):
+		querySet = Update.objects.all()
+
+		data = serialize("json", querySet, fields=('user', 'content'))
+		# data = {
+		# 	"user":obj.user.username,
+		# 	"content":obj.content
+		# }
+		return HttpResponse(data, content_type='application/json')
