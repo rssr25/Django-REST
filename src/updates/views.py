@@ -62,8 +62,9 @@ class SerializedDetailView(JsonResponseMixin, View):
 
 	def get(self, request, *args, **kwargs):
 		obj = Update.objects.get(id=1)
-		data = serialize("json", [obj,], fields=('user', 'content'))
+		#data = serialize("json", [obj,], fields=('user', 'content'))
 
+		data = obj.serialize()
 		return HttpResponse(data, content_type='application/json')
 
 
@@ -72,9 +73,11 @@ class SerializedListView(JsonResponseMixin, View):
 	def get(self, request, *args, **kwargs):
 		querySet = Update.objects.all()
 
-		data = serialize("json", querySet, fields=('user', 'content'))
+		#data = serialize("json", querySet, fields=('user', 'content'))
 		# data = {
 		# 	"user":obj.user.username,
 		# 	"content":obj.content
 		# }
+
+		data = Update.objects.all().serialize()
 		return HttpResponse(data, content_type='application/json')
