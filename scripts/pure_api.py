@@ -1,7 +1,7 @@
 import json 
 import requests #http requests
 
-BASE_URL = "http://127.0.0.1:8001/"
+BASE_URL = "http://127.0.0.1:8000/"
 ENDPOINT = "api/updates/"
 
 
@@ -29,4 +29,22 @@ def get_list():
 
 #print(get_list())
 
-get_list()
+def create_update():
+
+	new_data = {
+
+		"user":1,
+		"content": "Another new cool update"
+	}
+
+	r = requests.delete(BASE_URL + ENDPOINT, data = new_data)
+	print(r.headers)
+
+	if r.status_code == requests.codes.ok:
+		#print(r.json())
+		return r.json()
+	return r.text
+
+#get_list()
+
+print(create_update())
