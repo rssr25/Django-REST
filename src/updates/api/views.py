@@ -123,11 +123,32 @@ class UpdateModelListAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 	'''
 
 	is_json = True
+	querySet = None
+
+	def get_queryset(self):
+		qs = UpdateModel.objects.all()
+		self.querySet = qs
+		return qs
+
+	def get_object(self, id=None):
+
+		if id is None:
+			return None
+		try:
+			obj = self.get_queryset().get(id=id)
+		except UpdateModel.DoesNotExist:
+			obj = None
+
+		# qs = UpdateModel.objects.filter(id=id)
+		# if qs.count == 1:
+		# 	return qs.first()
+		# return None
+		return obj
 
 
 	def get(self, request, *args, **kwargs):
 
-		qs = UpdateModel.objects.all()
+		qs = self.get_queryset()
 		json_data = qs.serialize()
 
 		return self.render_to_response(json_data)
@@ -157,9 +178,70 @@ class UpdateModelListAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 		return self.render_to_response(data, status = 400)
 
 
+	def put(self, request, *args, **kwargs):
+
+		valid_json = is_json(request.body)
+		if not valid_json:
+			error_data = json.dumps({"message" : "Invalid data sent, please send using JSON"})
+			return self.render_to_response(error_data, status=400)
+		passed_data = json.loads(request.body)
+		passed_id = passed_data.get('id', None)
+
+		if not passed_id:
+			error_data = json.dumps({"id" : "This is a required field to update an item."})
+			return self.render_to_response(error_data, status=400)
+
+		obj = self.get_object(id=passed_id)
+		if obj is None:
+			error_data = json.dumps({"message": "Object not found"})
+			return self.render_to_response(error_data, status=404)
+
+
+		data = json.loads(obj.serialize())
+		for key, value in passed_data.items():
+			data[key] = value
+
+		form = UpdateModelForm(data)
+		if form.is_valid():
+			obj = form.save(commit = True)
+			obj_data = json.dumps(data)
+
+			return self.render_to_response(obj_data, status = 201)
+		if form.errors:
+			data = json.dumps(form.errors)
+			return self.render_to_response(data, status = 400)
+
+		data = json.dumps({"message":"something"})
+		return self.render_to_response(data)
+
+
 	def delete(self, request, *args, **kwargs):
-		data = json.dumps({"message": "You cannot delete an entire list!"})
-		return self.render_to_response(data, status = 403)
+
+		valid_json = is_json(request.body)
+		if not valid_json:
+			error_data = json.dumps({"message" : "Invalid data sent, please send using JSON"})
+			return self.render_to_response(error_data, status=400)
+		passed_data = json.loads(request.body)
+		passed_id = passed_data.get('id', None)
+
+		if not passed_id:
+			error_data = json.dumps({"id" : "This is a required field to update an item."})
+			return self.render_to_response(error_data, status=400)
+
+		obj = self.get_object(id=passed_id)
+		if obj is None:
+			error_data = json.dumps({"message": "Object not found"})
+			return self.render_to_response(error_data, status=404)
+
+		deleted_, item_deleted = obj.delete()
+		print(deleted_)
+
+		if deleted_ == 1:
+			data = json.dumps({"message":"successfully deleted"})
+			return self.render_to_response(data, status = 200)
+
+		error_data - json.dumps({"message": "Could not delete item. Please try again later."})
+		return self.render_to_response(data, status = 400)
 
 
 
