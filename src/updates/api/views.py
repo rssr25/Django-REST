@@ -64,25 +64,34 @@ class UpdateModelDetailAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 
 	def put(self, request, id, *args, **kwargs):
 
-		obj = self.get_object(id=id)
-
-		if obj is None:
-			error_data = json.dumps({"message": "update not found"})
-			return self.render_to_response(error_data, status=404)
-
-		print(dir(request))
-		#print(request.POST)
-		print(request.body)
 		valid_json = is_json(request.body)
-
-		#print(valid_json)
-
 		if not valid_json:
 			error_data = json.dumps({"message" : "Invalid data sent, please send using JSON"})
 			return self.render_to_response(error_data, status=400)
 
-		new_data = json.loads(request.body)
-		print(new_data['content'])
+
+		obj = self.get_object(id=id)
+		if obj is None:
+			error_data = json.dumps({"message": "update not found"})
+			return self.render_to_response(error_data, status=404)
+
+
+		data = json.loads(obj.serialize())
+		passed_data = json.loads(request.body)
+
+		for key, value in passed_data.items():
+			data[key] = value
+
+		form = UpdateModelForm(data)
+		if form.is_valid():
+			obj = form.save(commit = True)
+			obj_data = json.dumps(data)
+
+			return self.render_to_response(obj_data, status = 201)
+		if form.errors:
+			data = json.dumps(form.errors)
+			return self.render_to_response(data, status = 400)
+
 		data = json.dumps({"message":"something"})
 		return self.render_to_response(data)
 
@@ -92,12 +101,18 @@ class UpdateModelDetailAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 		obj = self.get_object(id=id)
 
 		if obj is None:
-			error_data = json.dumps({"message": "update not found"})
+			error_data = json.dumps({"message": "Item not found"})
 			return self.render_to_response(error_data, status=404)
-		data = {}
-		return self.render_to_response(data, status = 403)
- 
 
+		deleted_, item_deleted = obj.delete()
+		print(deleted_)
+
+		if deleted_ == 1:
+			data = json.dumps({"message":"successfully deleted"})
+			return self.render_to_response(data, status = 200)
+
+		error_data - json.dumps({"message": "Could not delete item. Please try again later."})
+		return self.render_to_response(data, status = 400)
 
 class UpdateModelListAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 
