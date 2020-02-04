@@ -20,6 +20,8 @@ class StatusSerializer(serializers.ModelSerializer):
 			'image'
 		]
 
+		read_only_fields = ['user'] #GET
+
 
 	def validate_content(self, value):
 		if len(value) > 10000:
