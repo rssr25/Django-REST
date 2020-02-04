@@ -19,21 +19,37 @@ data = {
 
 r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
 token = r.json()['token']
+print("got token")
 #print(token)
 
-refresh_data = {
-	'token':token
-}
+# refresh_data = {
+# 	'token':token
+# }
 
-new_reponse = requests.post(REFRESH_ENDPOINT, data=json.dumps(refresh_data), headers=headers)
-new_token = new_reponse.json()['token']
-print(new_token)
+# new_reponse = requests.post(REFRESH_ENDPOINT, data=json.dumps(refresh_data), headers=headers)
+# new_token = new_reponse.json()['token']
+# print(new_token)
 
 
 # get_endpoint = ENDPOINT + str(17)
 # get_data = json.dumps({"id":1234})
-# post_data = json.dumps({"content":"some random content"})
 
+
+
+headers = {
+	#"Content-Type":"application/json",
+	"Authorization":"JWT "+token,
+}
+
+with open(image_path, 'rb') as image:
+	file_data = {
+		'image':image
+	}
+
+	data = {"content":"CONTENTS YAAR"}
+	json_data = json.dumps(data)
+	posted_response = requests.post(ENDPOINT, data=data, headers=headers, files=file_data)
+	print(posted_response.text)
 
 
 # r = requests.get(get_endpoint)

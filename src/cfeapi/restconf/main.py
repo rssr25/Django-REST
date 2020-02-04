@@ -3,7 +3,7 @@ import datetime
 REST_FRAMEWORK = {
 	'DEFLAULT_AUTHENTICATION_CLASSES': [
 				#'rest_framwork.authentication.BasicAuthentication',
-				'rest_framework.authentication.SessionAuthentication',
+				#'rest_framework.authentication.SessionAuthentication',
 				'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
 		],
 
