@@ -2,19 +2,22 @@ import requests
 import json
 import os
 
-AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/"
+AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/register/"
 REFRESH_ENDPOINT = "http://127.0.0.1:8000/api/auth/jwt/refresh/"
 ENDPOINT = "http://127.0.0.1:8000/api/status/"
 image_path = os.path.join(os.getcwd(), "logo.jpeg")
 
 
 headers = {
-	'content-type':'application/json'
+	'content-type':'application/json',
+	#"Authorization":"JWT "+ 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1ODIxMzk1NjMsIm9yaWdfaWF0IjoxNTgyMTM5MjYzLCJlbWFpbCI6InJhaHVsc2hhcm1hY3M1MEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJhaHVsIn0.wTiDVjqo3MaJFgDEZgQ6hriwFjUvTyyguXwqgtaVqE0',
 }
 
 data = {
-	'username': 'rahul',
-	'password': 'sR25012106'
+	'username': 'amandeep1',
+	'password': 'sR25012106',
+	'password2': 'sR25012106',
+	'email': 'amandeep1@rahul.com'
 }
 
 r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)

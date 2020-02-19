@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"jw",
+				"jwt_response_payload_handler"
+			],
+			[
+				"jwt",
+				"jwt_encode_handler"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"res",
+				"rest_framework"
+			],
+			[
 				"EN",
 				"ENDPOINT"
 			],
@@ -304,10 +320,6 @@
 				"resultArray"
 			],
 			[
-				"res",
-				"resultArray"
-			],
-			[
 				"pro",
 				"productAllExceptAti"
 			],
@@ -502,81 +514,61 @@
 			[
 				"paymen",
 				"payment-form"
-			],
-			[
-				"pay",
-				"payment-submit"
-			],
-			[
-				"payment",
-				"payment-errors"
-			],
-			[
-				"auth",
-				"authenticate"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/updates/views.py",
-			"settings":
-			{
-				"buffer_size": 1656,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/cfeapi/wsgi.py",
-			"settings":
-			{
-				"buffer_size": 389,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/updates/models.py",
-			"settings":
-			{
-				"buffer_size": 1393,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "scripts/pure_api.py",
 			"settings":
 			{
-				"buffer_size": 534,
+				"buffer_size": 1351,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/updates/api/__init__.py",
+			"file": "scripts/rest_framework_api.py",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 2455,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/updates/api/urls.py",
+			"file": "src/accounts/api/views.py",
 			"settings":
 			{
-				"buffer_size": 268,
+				"buffer_size": 1348,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/updates/api/views.py",
+			"file": "src/accounts/api/utils.py",
 			"settings":
 			{
-				"buffer_size": 1126,
+				"buffer_size": 486,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/status/api/views.py",
+			"settings":
+			{
+				"buffer_size": 6868,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/accounts/api/urls.py",
+			"settings":
+			{
+				"buffer_size": 606,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -585,16 +577,7 @@
 			"file": "src/cfeapi/urls.py",
 			"settings":
 			{
-				"buffer_size": 1280,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/cfeapi/settings.py",
-			"settings":
-			{
-				"buffer_size": 3104,
+				"buffer_size": 1399,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -645,15 +628,21 @@
 	},
 	"expanded_folders":
 	[
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi",
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/scripts",
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src",
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/cfeapi",
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/updates",
-		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/updates/api"
+		"/home/rahul/Desktop/Django-REST",
+		"/home/rahul/Desktop/Django-REST/scripts",
+		"/home/rahul/Desktop/Django-REST/src",
+		"/home/rahul/Desktop/Django-REST/src/accounts",
+		"/home/rahul/Desktop/Django-REST/src/accounts/api"
 	],
 	"file_history":
 	[
+		"/home/rahul/Desktop/Django-REST/src/cfeapi/settings.py",
+		"/home/rahul/Desktop/Django-REST/src/cfeapi/urls.py",
+		"/home/rahul/Desktop/Django-REST/src/updates/api/views.py",
+		"/home/rahul/Desktop/Django-REST/src/updates/api/urls.py",
+		"/home/rahul/Desktop/Django-REST/src/updates/api/__init__.py",
+		"/home/rahul/Desktop/Django-REST/src/updates/models.py",
+		"/home/rahul/Desktop/Django-REST/src/updates/views.py",
 		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/cfeapi/mixins.py",
 		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/updates/admin.py",
 		"/home/rahul/Desktop/Django_REST_Framework_Udemy/restapi/src/updates/views.py",
@@ -774,14 +763,7 @@
 		"/media/rahul/Education/Courses/Web Design/2. Responsive Web design/Week 4/final_gallery/final_gallery/js/gallery.js",
 		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/Week 3/Assignment_3/assignment3.py",
 		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/main.py",
-		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/assignment2.py",
-		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/assignment2.oy",
-		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/personal_codebook.txt",
-		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/1_Frequency_Distribution.py",
-		"/home/rahul/opengl/checkOpengl.c",
-		"/media/rahul/Education/Courses/Web Design/2. Responsive Web design/Week 4/2.4.1/SelectImage/rahulindex.html",
-		"/media/rahul/Education/Courses/Web Design/2. Responsive Web design/Week 4/2.4.1/SelectImage/index.html",
-		"/home/rahul/myMEANapp/index.html"
+		"/media/rahul/Education/Courses/Data/1_Data_analysis_and_visualization/assignment2.py"
 	],
 	"find":
 	{
@@ -824,170 +806,58 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/updates/views.py",
+					"file": "scripts/pure_api.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1656,
+						"buffer_size": 1351,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1234,
-								1234
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/rest_framework_api.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/cfeapi/wsgi.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 389,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/updates/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								636,
-								636
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 6.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "scripts/pure_api.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 534,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 39.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/updates/api/__init__.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/updates/api/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								227,
-								227
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -997,20 +867,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "src/updates/api/views.py",
+					"buffer": 2,
+					"file": "src/accounts/api/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1126,
+						"buffer_size": 1348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								326,
-								326
+								990,
+								990
 							]
 						],
 						"settings":
@@ -1018,27 +888,27 @@
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 174.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "src/cfeapi/urls.py",
+					"buffer": 3,
+					"file": "src/accounts/api/utils.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1280,
+						"buffer_size": 486,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								570,
-								570
+								330,
+								330
 							]
 						],
 						"settings":
@@ -1046,27 +916,87 @@
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 133.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/status/api/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6868,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/accounts/api/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "src/cfeapi/settings.py",
+					"buffer": 6,
+					"file": "src/cfeapi/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3104,
+						"buffer_size": 1399,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								831,
-								831
+								1108,
+								1108
 							]
 						],
 						"settings":
@@ -1076,10 +1006,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 165.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

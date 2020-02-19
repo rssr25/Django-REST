@@ -13,7 +13,7 @@ jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 
 User = get_user_model()
 
-class AuthView(APIView):
+class AuthAPIView(APIView):
 
 	permission_classes 		= [permissions.AllowAny]
 
@@ -26,8 +26,6 @@ class AuthView(APIView):
 		data = request.data
 		username = data.get('username')
 		password = data.get('password')
-
-		user = authenticate(username=username, password=password)
 
 		qs = User.objects.filter(
 				Q(username__iexact =username) | Q(email__iexact=username)
@@ -42,3 +40,42 @@ class AuthView(APIView):
 				return Response(response)
 
 		return Response({"detail": "Invalid credentials"}, status=401)
+
+
+class RegisterAPIView(APIView):
+
+	permission_classes 		= [permissions.AllowAny]
+
+	def post(self, request, *args, **kwargs):
+		print(request.user)
+
+		if request.user.is_authenticated:
+			return Response({'detail': 'You are already registered and are authenticated.'}, status=400)
+
+		data = request.data
+		username 		= data.get('username')
+		email 			= data.get('email')
+		password 		= data.get('password')
+		password2		= data.get('password2')
+
+
+		if password != password2:
+			return Response({"password": "The passwords do not match!"}, status=401)
+
+		qs = User.objects.filter(
+				Q(username__iexact =username) | Q(email__iexact=username)
+			)
+
+		if qs.exists():
+			return Response({"detail": "This user already exists!"}, status=401)
+		else:
+			user = User.objects.create(username=username, email=email)
+			user.set_password(password)
+			user.save()
+			payload = jwt_payload_handler(user)
+			token = jwt_encode_handler(payload)
+			response = jwt_response_payload_handler(token, user, request=request)
+			return Response(response, status=201)
+
+
+		return Response({"detail": "Invalid request"}, status=400)
