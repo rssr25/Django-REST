@@ -14,10 +14,10 @@ headers = {
 }
 
 data = {
-	'username': 'amandeep4',
+	'username': 'amandeep17',
 	'password': 'sR25012106',
 	'password2': 'sR25012106',
-	'email': 'amandeep4@rahul.com'
+	'email': 'amandeep17@rahul.com'
 }
 
 r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
